@@ -1,5 +1,5 @@
-name: DMP 2025 Project Template
-description: List a new project for Dedicated Mentoring Program (DMP) 2025 
+name: AI Assisted Mental Health Screening Application
+description: The project aims to expand the scope of existing mental health screening questionnaires by creating a chatbot-based testing application. The chatbot will deliver engaging screening sessions for both children and adults.
 title: "[DMP 2025]: "
 labels: ["DMP 2025"]
 body:
@@ -11,7 +11,7 @@ body:
       label: Ticket Contents
       value: |
         ## Description
-        [Provide a brief description of the feature, including why it is needed and what it will accomplish.]
+        This project aims to develop an AI-assisted mental health screening chatbot that can interact with children and adults using adaptive, age-appropriate questioning strategies. The bot will map user responses to standardized rubrics and generate scores indicating possible mental health conditions. The backend should support integration with multiple language models (model-agnostic RAG pipeline), and the frontend will facilitate an engaging user experience.
 
   - type: textarea
     id: ticket-goals
@@ -22,29 +22,48 @@ body:
       description: List the goals of the feature. Please add the goals that must be achieved by Mid-point check-in i.e 1.5 months into the coding period.
       value: |
         ## Goals
-        - [ ] [Goal 1]
-        - [ ] [Goal 2]
-        - [ ] [Goal 3]
-        - [ ] [Goal 4]
-        - [ ] [Goals Achieved By Mid-point Milestone]
+        - [ ] Implement age-based query generator for chatbot
+        - [ ] Develop model-agnostic RAG pipeline with LLM plug-in support
+        - [ ] Integrate MongoDB-based vector store for rubric/question retrieval
+        - [ ] Build React-FastAPI data flow for basic chatbot interaction
+        - [ ] Write unit tests and logging for backend components
+
+        ## Goals Achieved By Mid-point Milestone
+        - [ ] MVP chatbot capable of short screening sessions with rubric score output
 
   - type: textarea
     id: ticket-setup
     attributes:
       label: Setup/Installation 
       description: Please list or link setup or installation guide (if any)
+      value: |
+        - Python 3.10+
+        - FastAPI
+        - MongoDB (with vector storage plugin, e.g., via `chromadb` or `qdrant`)
+        - React.js (frontend)
+        - Node.js (for React dev server)
+        - LLM API key for OpenAI or HuggingFace (optional during dev)
 
   - type: textarea
     id: ticket-expected-outcome
     attributes:
       label: Expected Outcome
       description: Describe in detail what the final product or result should look like and how it should behave.
+      value: |
+        The chatbot will dynamically adapt its tone and questions based on user age, retrieve appropriate screening content, interpret responses using standardized rubrics, and return categorized mental health scores. For children, interactions will be more visual/gamified; for adults, more empathetic and reflective. The backend will support pluggable LLMs and be production-ready with full CI/CD support.
 
   - type: textarea
     id: ticket-acceptance-criteria
     attributes:
       label: Acceptance Criteria
       description: List the acceptance criteria for this feature.
+      value: |
+        - Age-specific question adaptation works correctly
+        - Vector retrieval from MongoDB returns correct rubric segments
+        - Responses are mapped accurately to rubric categories
+        - Scores are returned with explanations
+        - Backend supports multiple model integrations
+        - React frontend integrates seamlessly with backend API
 
   - type: textarea
     id: ticket-implementation-details
@@ -53,12 +72,24 @@ body:
     attributes:
       label: Implementation Details
       description: List any technical details about the proposed implementation, including any specific technologies that will be used.
+      value: |
+        - FastAPI backend to handle routing, model calls, scoring, and session tracking
+        - MongoDB with vector indexing for RAG retrieval
+        - Langchain or similar framework for prompt construction (model-agnostic)
+        - Support for OpenAI, HuggingFace, or local models
+        - Age and tone-based query generation logic
+        - React frontend with role-based UX
+        - Python unittest or Pytest for backend unit tests
+        - Logging using `loguru` or `structlog`
+        - Deployment via Docker and GitHub Actions
 
   - type: textarea
     id: ticket-mockups
     attributes:
       label: Mockups/Wireframes
       description: Include links to any visual aids, mockups, wireframes, or diagrams that help illustrate what the final product should look like. This is not always necessary, but can be very helpful in many cases.
+      value: |
+        Will be added once the frontend wireframes are designed. May include age-based chatbot UX mockups and rubric visualization components.
 
   - type: input
     id: ticket-product
@@ -67,6 +98,7 @@ body:
       placeholder: Enter Product Name
     validations:
       required: true
+      default: AI Assisted Mental Health Screening Application
 
   - type: dropdown
     id: ticket-organisation
@@ -120,7 +152,7 @@ body:
         - Water
     validations:
       required: true
-
+      default: ⁠Healthcare
 
   - type: dropdown
     id: ticket-technical-skills-required
@@ -213,12 +245,24 @@ body:
         - Other
     validations:
       required: true
+      default:
+        - Artificial Intelligence
+        - MongoDB
+        - Python
+        - React
+        - RESTful APIs
+        - FastAPI
+        - CI/CD
+        - Machine Learning
+        - Natural Language Processing
 
   - type: textarea
     id: ticket-mentors
     attributes:
       label: Mentor(s)
       description: Please tag relevant mentors for the ticket
+      value: |
+        @mentor1 @mentor2
     validations:
       required: true
 
@@ -260,5 +304,9 @@ body:
         - Other
     validations:
       required: true
-
-  
+      default:
+        - AI
+        - Backend
+        - Machine Learning
+        - CI/CD
+        - API
