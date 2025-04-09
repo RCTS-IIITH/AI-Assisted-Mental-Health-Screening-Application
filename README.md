@@ -1,8 +1,3 @@
-# WI2024-Team3
-
-
-# WI2024-Team3
-
 ## Project Overview
 
 This project is a web application designed to facilitate interactions between students, parents, teachers, and psychologists. It includes various dashboards for different user roles, allowing them to manage questionnaires, view responses, and more.
