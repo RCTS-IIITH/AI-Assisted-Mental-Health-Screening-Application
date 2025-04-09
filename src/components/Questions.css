@@ -1,0 +1,213 @@
+.grid {
+    display: flex;
+    /* background-color: green; */
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.btn-next {
+    margin-left: 3vw;
+}
+
+.question-text {
+    /* border: 2px solid red; */
+    /* padding-top: 40px; */
+    padding-bottom: 3vh;
+    text-align: left;
+}
+
+.question-part {
+    margin-bottom: 5vh;
+}
+
+.questions {
+    /* border: 2px solid blue; */
+    padding-top: 5vh;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    margin: auto;
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.option-text:hover {
+    border: none;
+}
+
+.write-description {
+    width: 100%;
+    /* Make the textarea fill the available width */
+    height: 20vh;
+    padding: 10px;
+    /* Add padding inside the textarea for better text readability */
+    border: 1px solid #ccc;
+    /* Light border for the textarea */
+    border-radius: 4px;
+    /* Rounded corners */
+    background-color: #f9f9f9;
+    /* Light background color */
+    font-size: 16px;
+    /* Standard text size */
+    font-family: Arial, sans-serif;
+    /* Clean and readable font */
+    resize: vertical;
+    /* Allow the textarea to be resized vertically */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+    outline: none;
+    /* Remove default outline on focus */
+    transition: border-color 0.3s ease;
+    /* Smooth transition for border color on focus */
+    max-height: 50vh;
+}
+
+.write-description:focus {
+    border-color: #4A90E2;
+    /* Change border color on focus */
+    background-color: #ffffff;
+    /* Optionally change background on focus */
+}
+
+.write-description::placeholder {
+    color: #888;
+    /* Gray color for the placeholder text */
+    font-style: italic;
+    /* Make placeholder text italic */
+}
+
+.question-here {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.ulQues {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* border: 2px solid violet; */
+}
+
+li {
+    /* border: 2px solid #f0f4ff; */
+    border: 2px solid transparent;
+    margin-bottom: 4vh;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+li :hover {
+    border: 2px solid #5d5fefd2;
+}
+
+li-without-image {
+    height: 5vh;
+}
+
+.li-with-image {
+    height: 30vh;
+}
+
+li img {
+
+    height: 25vh;
+    width: 25vh;
+    display: block;
+}
+
+.question-image img {
+    display: inline;
+    height: 40vh;
+    width: auto;
+
+}
+
+.inp-rad {
+    display: none;
+}
+
+.inp-rad:checked+label {
+    border: 2px solid #5d5fef31;
+    background-color: #5d5fef31;
+}
+
+.text-primary {
+    font-size: 1.2em;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.text-primary:before {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+button {
+    border: 2px solid #5d5fef;
+    background-color: #5d5fef;
+    color: #fff;
+    border-radius: 2vh;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    width: 10vw;
+
+}
+
+
+button:hover {
+    background-color: white;
+    border: 2px solid #5d5fef;
+    color: black;
+}
+
+
+
+/* button {
+    background-color: #5d5fef;
+    color: #fff;
+    border: none;
+    border-radius: 2vh;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    width: 10vw;
+}
+
+
+.test-progress {
+    width: 100%;
+    height: 8px;
+    background-color: #dcdcdc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.test-progress::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background-color: #3b82f6;
+    width: 40%;
+    border-radius: 5px;
+}  */

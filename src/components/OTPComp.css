@@ -1,0 +1,150 @@
+/* styles.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+  }
+  
+  .container-OTP {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+  }
+  
+
+  
+  
+  .Outside-Form-Reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    width: 90vw;
+    border-radius: 1vh;
+    border: 1px solid lightgray;
+    margin-top: 5vh;
+    /* min-height: 60vh;  */
+    text-align: center;
+    height: 80vh;
+  }
+  
+
+  
+  .form-container-Reset{
+    background-color: white;
+    padding: 4vh;
+    width: 40vw;
+    /* height: 93vh; */
+    border-radius: 1vh;
+    box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
+    border: 1px solid #7879F1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+  
+  
+
+  .Heading-Reset
+  {
+    color: #7b6bf2;
+    /* margin-bottom: 2vh; */
+    font-size: 5vh;
+    text-align: center;
+    /* font-weight: bold; */
+    
+  }
+  
+
+  .Reset-Inp {
+    width: 100%;
+    padding: 1.2vh;
+    margin: 2vh 0;
+    border: 0.1vh solid #ddd;
+    border-radius: 0.5vh;
+    font-size: 1.8vh;
+    /* box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1); */
+    border: 1px solid lightgray;
+  }
+  
+  .Reset-Inp:focus {
+    border-color: #7b6bf2;
+    outline: none;
+  }
+  
+  .password-container-R {
+    position: relative;
+  }
+  
+
+
+  
+
+  
+  
+
+  
+
+  .toggle-password-R{
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 3vh;
+  }
+
+  
+  .btn-Reset{
+    width: 100%;
+    padding: 1.2vh;
+    margin-top: 2vh;
+    background-color: #7879F1;
+    color: white;
+    border: none;
+    border-radius: 0.5vh;
+    /* font-weight: bold; */
+    cursor: pointer;
+    font-size: 2.5vh;
+  
+  }
+  
+  .btn-Reset:hover {
+    background-color: #3733d9;
+  }
+
+  .Below-Reset
+  {
+    margin-top: 3vh;
+    font-size: 2.25vh;
+  }
+
+  .forgot-p
+  {
+    margin-top: 2vh;
+    color: #555;
+    font-size: 2.4vh;
+    /* margin-top: 3vh; */
+  }
+  
+  .login-link {
+      color: #2F89FC;
+      /* text-decoration: underline; */
+      cursor: pointer;
+    }
+  
+  .login-link:hover
+  {
+      text-decoration: underline;
+  }

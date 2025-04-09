@@ -1,0 +1,197 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4ff;
+  /* Keeping your background color */
+}
+
+.PsychoD-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  /* Added padding for smaller screens */
+}
+
+.Outside {
+  height: 85vh;
+  margin-top: 3vh;
+  border-radius: 12px;
+  border: 0.2vh solid lightgray;
+  width: 75vw;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.Welcome-P {
+  font-size: 4vh;
+  font-weight: bold;
+  margin-top: 5vh;
+  /* Adjusted for spacing */
+  margin-bottom: 2rem;
+  /* Cleaner spacing below */
+  text-align: center;
+  color: #212529;
+  /* Text color */
+}
+
+.card-container-PsychoDash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  margin-top: 5vh;
+  text-align: center;
+  height: 80vh;
+  gap: 2vw;
+  flex-wrap: wrap;
+  /* Allow cards to wrap */
+}
+
+.main-container-PsychoDash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75vw;
+  /* Fill the container */
+  margin-top: 5vh;
+  text-align: center;
+  height: auto;
+  /* Removed fixed height for responsiveness */
+  gap: 2vw;
+  /* Space between cards */
+  flex-wrap: wrap;
+  /* Allow cards to wrap */
+}
+
+/* Target the cards inside the main container */
+.main-container-PsychoDash>div {
+  transition: all 0.3s ease-in-out;
+  /* Smooth hover effect */
+  border: 1px solid lightgray;
+  /* Default border */
+  background-color: #ffffff;
+  /* Default background */
+  border-radius: 8px;
+  /* Smooth corners */
+  padding: 1.5rem;
+  /* Inner spacing */
+  cursor: pointer;
+  /* Pointer on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  flex: 1 1 30%;
+  /* Default to 30% width on larger screens */
+  min-width: 200px;
+  /* Ensure cards don’t shrink too much */
+  margin: 1vh;
+}
+
+/* Hover effects */
+.main-container-PsychoDash>div:hover {
+  border: 2px solid #3b82f6;
+  /* Blue border */
+  background-color: #e0f2fe;
+  /* Light blue background */
+  transform: translateY(-4px);
+  /* Slight lift */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  /* Enhanced shadow */
+}
+
+/* Responsive Design for Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+  .Outside {
+    width: 90vw;
+    /* Make the container fill more space on small screens */
+    padding: 1rem;
+    /* Reduce padding */
+  }
+
+  .Welcome-P {
+    font-size: 5vh;
+    /* Adjust font size for mobile */
+    margin-top: 2vh;
+    /* Adjust margin for mobile */
+  }
+
+  .card-container-PsychoDash {
+    flex-direction: column;
+    /* Stack cards vertically */
+    width: 90vw;
+    /* Make the container take more width */
+    margin-top: 4vh;
+  }
+
+  .main-container-PsychoDash {
+    width: 90vw;
+    /* Ensure cards container is not too wide */
+  }
+
+  .main-container-PsychoDash>div {
+    flex: 1 1 100%;
+    /* Make each card take full width on mobile */
+    margin: 1rem 0;
+    /* Adjust margin to avoid overlap */
+    padding: 1rem;
+    /* Reduce padding inside the cards */
+  }
+
+  /* Adjust font size for text inside cards */
+  .main-container-PsychoDash>div h3 {
+    font-size: 3vh;
+  }
+}
+
+/* Responsive Design for Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Outside {
+    width: 85vw;
+    /* Adjust container width for tablets */
+    padding: 1.5rem;
+  }
+
+  .card-container-PsychoDash {
+    flex-direction: row;
+    gap: 2vw;
+  }
+
+  .main-container-PsychoDash>div {
+    flex: 1 1 45%;
+    /* Cards take up 45% width on tablets */
+    margin: 1vh;
+  }
+
+  .Welcome-P {
+    font-size: 4.5vh;
+    /* Slightly larger font size for tablets */
+    margin-top: 3vh;
+  }
+}
+
+/* For Large Screens (desktops) */
+@media (min-width: 1025px) {
+  .Outside {
+    width: 75vw;
+    /* Ensure the container is not too wide */
+    padding: 2rem;
+  }
+
+  .card-container-PsychoDash {
+    gap: 2vw;
+  }
+
+  .main-container-PsychoDash>div {
+    flex: 1 1 30%;
+    /* Cards take 30% width on larger screens */
+    margin: 1vh;
+  }
+
+  .Welcome-P {
+    font-size: 4vh;
+    /* Default font size for larger screens */
+  }
+}

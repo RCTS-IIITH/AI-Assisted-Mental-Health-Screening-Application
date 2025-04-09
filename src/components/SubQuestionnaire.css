@@ -1,0 +1,168 @@
+/* Global Responsive Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #4a4a4a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Loader Icon */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Main Container */
+.bg-white {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bg-white:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Questionnaire View */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.questionnaire-list {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.questionnaire-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .questionnaire-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Buttons */
+.save-button {
+  background-color: #1d4ed8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .save-button {
+    width: auto;
+  }
+}
+
+/* Responsive Spacing */
+.p-4 {
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .p-6 {
+    padding: 1.5rem;
+  }
+}
+
+/* Typography */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .text-base {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive Header */
+.text-3xl {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .text-3xl {
+    font-size: 2rem;
+    text-align: left;
+  }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 640px) {
+  .bg-white {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .questionnaire-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Media Queries for Larger Devices */
+@media (min-width: 1024px) {
+  .bg-white {
+    margin: 2rem 4rem;
+  }
+}

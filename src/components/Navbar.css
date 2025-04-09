@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #5d5fef;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.navbar-img {
+  margin-left: 95vw;
+  margin-right: 1.5vw;
+  padding: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-img img {
+  width: 3.5vh;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+}
+
+.ThankYou-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Outside-TY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
+    width: 90vw;
+    border-radius: 1vh;
+    border: 1px solid lightgray;
+    margin-top: 5vh;
+    /* min-height: 60vh;  */
+    text-align: center;
+    height: 80vh;
+}
+
+.TY-Box {
+    padding: 12vh;
+    width: 45vw;
+    /* height: 50vh; */
+    border-radius: 1vh;
+    box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
+    border: 1px solid #7879F1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.TY-Text {
+    color: #7879F1;
+    font-size: 3.2vh;
+}

@@ -1,0 +1,77 @@
+/* General body styles */
+body {
+    overflow-x: hidden;
+}
+
+/* Quiz page container */
+.quiz-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 10vw;
+}
+
+/* Container for questions page */
+.container-QuestionsPage {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100vw;
+    padding-top: 8vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    border-radius: 10px;
+}
+
+/* Grid for buttons on the questions page */
+.grid-QuestionsPage {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 20vw;
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+
+    /* Adjust padding and widths for smaller screens */
+    .quiz-page {
+        padding-right: 5vw;
+        /* Reduced padding for smaller screens */
+    }
+
+    .container-QuestionsPage {
+        padding-top: 5vh;
+        /* Adjusted top padding */
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .grid-QuestionsPage {
+        width: 40vw;
+        /* Increase width for buttons on mobile */
+        margin-top: 10px;
+    }
+}
+
+/* Extra mobile small screens */
+@media screen and (max-width: 480px) {
+
+    /* Further reduce paddings for very small screens */
+    .quiz-page {
+        padding-right: 2vw;
+    }
+
+    .container-QuestionsPage {
+        padding-top: 4vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .grid-QuestionsPage {
+        width: 80vw;
+        /* Full-width for buttons on small screens */
+    }
+}

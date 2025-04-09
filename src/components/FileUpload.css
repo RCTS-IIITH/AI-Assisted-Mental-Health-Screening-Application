@@ -1,0 +1,152 @@
+/* Main Container Styling */
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f4ff;
+    padding: 0 2vw;
+}
+
+/* File Upload Block */
+.file-upload-block {
+    width: 90%;
+    /* Use percentage for responsiveness */
+    max-width: 500px;
+    height: auto;
+    margin-top: 20vh;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    justify-items: center;
+    text-align: center;
+}
+
+/* Heading */
+.heading {
+    font-size: 2.5rem;
+    /* Relative units for better scaling */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* File Input */
+.file-input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    /* Adjust for better small-screen layout */
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 15px 0;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    font-size: 1rem;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Submit Button */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Ensure entire page height is used */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+
+    /* File upload block becomes smaller on smaller screens */
+    .file-upload-block {
+        width: 90%;
+        margin-top: 15vh;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .file-input,
+    .submit-button {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .checkbox-group label {
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* For very small devices like phones in portrait mode */
+    .file-upload-block {
+        width: 95%;
+        margin-top: 10vh;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+    }
+
+    .file-input,
+    .submit-button {
+        font-size: 1rem;
+        padding: 6px;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
