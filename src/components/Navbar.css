@@ -1,19 +1,118 @@
+/* Modern Navbar Styling */
 .navbar {
-  background-color: #5d5fef;
-  width: 100vw;
+  position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
 }
 
-.navbar-img {
-  margin-left: 95vw;
-  margin-right: 1.5vw;
-  padding: 1.5vw;
+.navbar-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.navbar-img img {
-  width: 3.5vh;
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4361ee;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.navbar-brand:hover {
+  color: #3a0ca3;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.85rem;
+}
+
+.user-type {
+  font-weight: 600;
+  color: #4361ee;
+}
+
+.user-id {
+  color: #6c757d;
+  font-size: 0.75rem;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.logout-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+  
+  .user-info {
+    display: none;
+  }
+  
+  .logout-btn span {
+    display: none;
+  }
+  
+  .logout-btn {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.3rem 0;
+  }
+  
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
 }

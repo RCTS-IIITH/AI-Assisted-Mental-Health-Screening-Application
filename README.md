@@ -29,15 +29,40 @@ This project is a web application designed to facilitate interactions between st
 
 ## Installation
 
+
 ### Backend
 1. Navigate to the `backend` directory:
    ```sh
    cd backend
+  
    ```
-2. Install the required Python packages:
+2. Create and activate a virtual environment to manage dependencies separately for this project:
+
+
+   1. On macOS/Linux:
+   ```sh
+   cd backend
+   python3 -m venv venv
+   source venv/bin/activate
+
+   ```
+   
+    2. On Windows:
+
+    ```sh
+
+   cd backend
+   python -m venv venv
+   venv\Scripts\activate
+
+    ```
+
+
+3. Install the required Python packages:
    ```sh
    pip install -r requirements.txt
    ```
+
 
 ### Frontend
 1. Navigate to the project root directory:
@@ -48,6 +73,8 @@ This project is a web application designed to facilitate interactions between st
    ```sh
    npm install
    ```
+
+
 
 ## Running the Application
 
