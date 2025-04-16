@@ -125,6 +125,7 @@ def signup():
 
     # token = generate_token(user_id)
     # return jsonify({"token": token, "message": "User registered successfully"}), 201
+    
     data = request.get_json()
     name = data.get("name")
     age = data.get("age")

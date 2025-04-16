@@ -1,15 +1,18 @@
 import React from 'react';
 import './Card.css';
-function Card({ role, statement, isSelected, onSelect }) {
-  return (
-    <div
-      className={`card ${isSelected ? 'card-selected' : ''}`}
-      onClick={onSelect}
-    >
-      <h3>{role}</h3>
-      <p>{statement}</p>
-    </div>
-  );
-}
+
+const Card = ({ role, statement, icon, isSelected, onSelect }) => (
+  <div 
+    className={`role-card ${isSelected ? 'selected' : ''}`}
+    onClick={onSelect}
+  >
+    <div className="role-icon">{icon}</div>
+    <h3>{role}</h3>
+    <p>{statement}</p>
+    <button className="select-button">
+      {isSelected ? 'Selected' : 'Select'}
+    </button>
+  </div>
+);
 
 export default Card;

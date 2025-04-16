@@ -1,88 +1,200 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4ff;
+/* Modern CSS Reset */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Color Variables */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a0ca3;
+  --secondary: #f72585;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --white: #ffffff;
+  --success: #4cc9f0;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8fafc;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Layout Container */
 .landing-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--gray);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* Role Selection Section */
+.role-selection {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.role-selection h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* Cards Container */
+.card-container-LP {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Individual Card */
+.role-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-}
-
-.card-container-LP {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  /* Adjusted for smaller screens */
-  margin-top: 5vh;
   text-align: center;
-  height: auto;
-  /* Height adjusts automatically */
-  gap: 2vw;
-  flex-wrap: wrap;
-  /* Allows wrapping for smaller devices */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.Outside-LP {
-  margin-top: 3vh;
-  border-radius: 12px;
-  /* Smooth edges */
-  border: 0.2vh solid lightgray;
-  background: #ffffff;
-  /* Card container background */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for a modern look */
-  padding: 2rem;
-  /* Spacing inside the container */
-  width: 100%;
-  /* Adjust to full width of container */
-  max-width: 300px;
-  /* Restrict maximum width */
-  box-sizing: border-box;
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.role-card.selected {
+  border: 2px solid var(--primary);
+  background-color: rgba(67, 97, 238, 0.03);
+}
+
+.role-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.role-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  font-weight: 700;
+}
+
+.role-card p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.select-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: auto;
+  width: fit-content;
+}
+
+.select-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .card-container-LP {
-    width: 100%;
-    gap: 1.5vw;
+  .hero h1 {
+    font-size: 2.5rem;
   }
-
-  .Outside-LP {
-    padding: 1.5rem;
-    max-width: 250px;
-    /* Slightly smaller cards on medium screens */
+  
+  .hero p {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .card-container-LP {
-    flex-direction: column;
-    /* Stack cards vertically on smaller devices */
-    align-items: center;
+  .landing-page-container {
+    padding: 1.5rem;
   }
-
-  .Outside-LP {
-    padding: 1rem;
-    max-width: 90%;
-    /* Cards take up most of the screen width */
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .role-selection h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card-container-LP {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 }
 
 @media (max-width: 480px) {
-  .Outside-LP {
-    padding: 0.8rem;
-    max-width: 100%;
-    /* Full width for very small screens */
+  .landing-page-container {
+    padding: 1rem;
   }
-
-  .card-container-LP {
-    gap: 1vw;
-    /* Reduce gap on small screens */
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .role-card {
+    padding: 1.5rem;
   }
 }
