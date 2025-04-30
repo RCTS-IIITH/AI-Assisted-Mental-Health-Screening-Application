@@ -14,3 +14,7 @@ numpy>=1.24.3
 transformers>=4.30.2
 pytest>=7.4.0
 requests>=2.31.0
+flask
+bcrypt
+jwt
+flask_cors
