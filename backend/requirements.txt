@@ -18,3 +18,12 @@ flask
 bcrypt
 jwt
 flask_cors
+fastapi
+uvicorn
+aiohttp
+python-dotenv
+pydantic
+pymongo
+motor
+sentence-transformers
+hf_xet
