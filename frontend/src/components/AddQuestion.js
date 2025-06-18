@@ -19,7 +19,8 @@ const QuestionForm = () => {
   const [success, setSuccess] = useState('');
   const [questionnaireName, setQuestionnaireName] = useState('');
   const [questionImagePreview, setQuestionImagePreview] = useState(null);
-
+  
+  // FIX: Fucntions are being instantiated again and again
   useEffect(() => {
     const fetchQuestionnaireDetails = async () => {
       try {

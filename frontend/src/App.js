@@ -18,6 +18,7 @@ import QuestionnaireView from "./components/SubQuestionnaire";
 import SubQuestionnaireView from "./components/ParticularTag"
 import SubmitOtpComp from "./components/OTPComp";
 import FileUpload from "./components/FileUpload";
+import QuestionnaireBot from "./components/QuestionnaireBot";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path="/questionnaire/:id" element={<QuestionnaireView />} />
           <Route path="/response-table" element={<ResponseTable />} />
           <Route path="/questionnaire/:id/subquestionnaire/:tag" element={<SubQuestionnaireView />} />
+          <Route path="/questionnaire-bot" element={<QuestionnaireBot />} />
         </Routes>
       </div>
     </Router>

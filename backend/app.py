@@ -521,8 +521,6 @@ def handle_preflight():
 
 
 # Updated view_questionnaire route to include questions
-
-
 @app.route("/view_questionnaire", methods=["GET"])
 @cross_origin(origin="http://localhost:3000", supports_credentials=True)
 def view_questionnaire():

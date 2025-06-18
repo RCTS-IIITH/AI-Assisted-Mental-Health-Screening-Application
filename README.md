@@ -51,14 +51,29 @@ This project is a web application designed to facilitate interactions between st
 
 ## Running the Application
 
-### Backend
+### Backend (management)
 1. Start the Flask server:
    ```sh
    flask run
    ```
+### ChatBackend
+1. move to chatbot folder:
+   ```sh
+   cd chatbot
+   ```
+2. Start the fastAPI server:
+   ```sh
+   uvicorn app:app --reload --port 8000
+   ```
 
 ### Frontend
-1. Start the React development server:
+1. Get to the frontend folder:
+   ```sh
+   cd ..
+   cd ..
+   cd frontend
+   ```
+2. Start the React development server:
    ```sh
    npm start
    ```
