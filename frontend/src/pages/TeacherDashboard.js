@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom"
 import { ChevronDown, ChevronRight, Trash2, Play, X, AlertTriangle, CheckCircle, XCircle, AlertCircle, User, GraduationCap, Calendar, School } from "lucide-react"
 import axios from "axios"
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 function TeacherDashboard() {
   const user = useSelector((state) => state.auth.user)
   const token = useSelector((state) => state.auth.token)
@@ -58,7 +60,7 @@ function TeacherDashboard() {
 
   // Fetch questionnaires on component mount
   useEffect(() => {
-    axios.get("http://localhost:8000/api/get/questionnaires")
+    axios.get(`${BACKEND_URL}/api/get/questionnaires`)
       .then(res => {
         console.log("Fetched questionnaires:", res.data.questionnaires);
         setQuestionnaires(res.data.questionnaires);
@@ -72,7 +74,7 @@ function TeacherDashboard() {
     setError(null)
     
     try {
-      const response = await fetch('http://localhost:8000/api/teacher/children', {
+      const response = await fetch(`${BACKEND_URL}/api/teacher/children`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +111,7 @@ function TeacherDashboard() {
     setLoading(true)
     
     try {
-      const response = await fetch('http://localhost:8000/api/teacher/add-child', {
+      const response = await fetch(`${BACKEND_URL}/api/teacher/add-child`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -176,7 +178,7 @@ function TeacherDashboard() {
     setLoading(true)
     
     try {
-      const response = await fetch('http://localhost:8000/api/teacher/delete-child', {
+      const response = await fetch(`${BACKEND_URL}/api/teacher/delete-child`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -219,7 +221,7 @@ function TeacherDashboard() {
     setLoading(true)
     
     try {
-      const response = await fetch('http://localhost:8000/api/questionnaire/start', {
+      const response = await fetch(`${BACKEND_URL}/api/questionnaire/start`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

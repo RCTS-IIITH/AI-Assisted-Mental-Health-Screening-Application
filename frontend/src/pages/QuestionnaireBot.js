@@ -3,6 +3,8 @@ import { Bot, User, Send, Brain, MessageCircle, Sparkles } from "lucide-react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 const QuestionnaireBot = () => {
   const [models, setModels] = useState([]);
   const [activeModel, setActiveModels] = useState("Gemini");
@@ -25,7 +27,7 @@ const QuestionnaireBot = () => {
   ]);
   
   useEffect(() => {
-    axios.get("http://localhost:8000/api/get/models")
+    axios.get(`${BACKEND_URL}/api/get/models`)
       .then(res => setModels(res.data.models))
       .catch(() => setModels(["Gemini", "GPT-4"]));
   }, []);
@@ -41,7 +43,7 @@ const QuestionnaireBot = () => {
     setInput("");
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/api/questionnaire/end", {
+      const response = await fetch(`${BACKEND_URL}/api/questionnaire/end`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +79,7 @@ const QuestionnaireBot = () => {
 
     // Mock streaming response for demo
     try {
-      const response = await fetch("http://localhost:8000/api/chat/stream", {
+      const response = await fetch(`${BACKEND_URL}/api/chat/stream`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { MessageCircle, ArrowLeft, School, User, UserCheck, FileText, Search, X, Send } from "lucide-react"
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 function ResponseTable() {
   // State for selected school
   const [selectedSchool, setSelectedSchool] = useState("All Schools")
@@ -26,7 +28,7 @@ function ResponseTable() {
   const fetchSchools = async () => {
     try {
       console.log("Fetching school names...")
-      const response = await fetch("http://localhost:8000/api/psychologist/get-unique-schools", {
+      const response = await fetch(`${BACKEND_URL}/api/psychologist/get-unique-schools`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +50,7 @@ function ResponseTable() {
   const fetchResponses = async () => {
     try {
       console.log("Fetching chat responses...")
-      const response = await fetch("http://localhost:8000/api/psychologist/chat-responses", {
+      const response = await fetch(`${BACKEND_URL}/api/psychologist/chat-responses`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -67,7 +69,7 @@ function ResponseTable() {
     setLoadingChat(true)
     try {
       console.log("Fetching chat for session:", sessionId)
-      const response = await fetch(`http://localhost:8000/api/psychologist/chat/${sessionId}`, {
+      const response = await fetch(`${BACKEND_URL}/api/psychologist/chat/${sessionId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +98,7 @@ function ResponseTable() {
   const saveDiagnosis = async (sessionId) => {
     try {
       const diagnosis = diagnoses[sessionId] || ""
-      const response = await fetch("http://localhost:8000/api/psychologist/update-diagnosis", {
+      const response = await fetch(`${BACKEND_URL}/api/psychologist/update-diagnosis`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ session_id: sessionId, diagnosis })

@@ -4,11 +4,10 @@ import Login from "./pages/Login";
 import ParentDashboard from "./pages/ParentDashboard";
 import PsychologistDashboard from './pages/PsychologistDashboard'
 import TeacherDashboard from "./pages/TeacherDashboard";
-import AddQuestionnaire from "../components/AddQuestionnaire";
-import QuestionForm from "../components/AddQuestion";
+import AddQuestionnaire from "./components/AddQuestionnaire";
 import ResponseTable from "./pages/ResponseTable"
 import QuestionnaireBot from "./pages/QuestionnaireBot";
-import QuestionnaireDetail from "../components/QuestionnaireDetail";
+import QuestionnaireDetail from "./components/QuestionnaireDetail";
 import { useSelector } from "react-redux"
 import { Navigate } from "react-router-dom";
 
@@ -52,14 +51,6 @@ function App() {
             element={
               isAuthenticated && role === "Psychologist" ? 
                 <AddQuestionnaire /> : 
-                <Navigate to="/" replace />
-            } 
-          />
-          <Route 
-            path="/questionnaire/:questionnaireId/add-question" 
-            element={
-              isAuthenticated && role === "Psychologist" ? 
-                <QuestionForm /> : 
                 <Navigate to="/" replace />
             } 
           />

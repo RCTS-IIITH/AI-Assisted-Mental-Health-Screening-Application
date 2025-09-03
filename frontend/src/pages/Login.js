@@ -7,6 +7,7 @@ import { loginStart, loginSuccess, loginFailure} from "../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const roles = ["Parent", "Teacher", "Psychologist"];
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Login = () => {
   const [mode, setMode] = useState("login"); // login | signup | forgot | otp
@@ -40,8 +41,8 @@ const Login = () => {
     }
     try {
       dispatch(loginStart());
-      
-      const res = await axios.post(`http://localhost:8000/api/auth/login`, { mobile, password });
+
+      const res = await axios.post(`${BACKEND_URL}/api/auth/login`, { mobile, password });
 
       if (res.status === 200) {
         const { access_token, token_type, user, expires_in, message } = res.data;
@@ -106,7 +107,7 @@ const Login = () => {
         password,
         otp
       }
-      const res = await axios.post(`http://localhost:8000/api/auth/signup`, data);
+      const res = await axios.post(`${BACKEND_URL}/api/auth/signup`, data);
 
       if (res.status === 200) {
         const { message } = res.data;
@@ -134,7 +135,7 @@ const Login = () => {
       return;
     }
     try{
-      const res = await axios.post(`http://localhost:8000/api/auth/send-otp`, { mobile });
+      const res = await axios.post(`${BACKEND_URL}/api/auth/send-otp`, { mobile });
 
       if (res.status === 200) {
         const { message } = res.data;
@@ -163,7 +164,7 @@ const Login = () => {
       return;
     }
     try{
-      const res = await axios.post(`http://localhost:8000/api/auth/change-password`, { mobile, password });
+      const res = await axios.post(`${BACKEND_URL}/api/auth/change-password`, { mobile, password });
 
       if (res.status === 200) {
         const { message } = res.data;
@@ -188,7 +189,7 @@ const Login = () => {
       return;
     }
     try{
-      const res = await axios.post(`http://localhost:8000/api/auth/verify-otp`, { mobile, otp});
+      const res = await axios.post(`${BACKEND_URL}/api/auth/verify-otp`, { mobile, otp});
 
       if (res.status === 200) {
         const { message } = res.data;

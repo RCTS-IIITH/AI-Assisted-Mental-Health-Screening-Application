@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { ArrowLeft, FileText, HelpCircle, Clock, User, CheckCircle, AlertCircle, ChevronRight } from "lucide-react"
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 function QuestionnaireDetail() {
   const { questionnaireName } = useParams()
   const navigate = useNavigate()
@@ -16,7 +18,7 @@ function QuestionnaireDetail() {
   const fetchQuestionnaire = async () => {
     try {
       setLoading(true)
-      const response = await fetch(`http://localhost:8000/api/get/questionnaire/${questionnaireName}`, {
+      const response = await fetch(`${BACKEND_URL}/api/get/questionnaire/${questionnaireName}`, {
         method: "GET",
         headers: {
           Accept: "application/json",

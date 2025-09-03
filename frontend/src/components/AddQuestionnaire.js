@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { Users, UserRound, School, Check, ArrowLeft, FileText, Plus, Settings, Eye, HelpCircle, Clock, CheckCircle, AlertCircle } from "lucide-react"
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 function AddQuestionnaire() {
   const [questionnaires, setQuestionnaires] = useState([])
   const [loading, setLoading] = useState(true)
@@ -25,7 +27,7 @@ function AddQuestionnaire() {
   const fetchQuestionnaireDetail = async (questionnaireName) => {
     try {
       setDetailLoading(true)
-      const response = await fetch(`http://localhost:8000/api/get/questionnaire/${questionnaireName}`, {
+      const response = await fetch(`${BACKEND_URL}/api/get/questionnaire/${questionnaireName}`, {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -67,7 +69,7 @@ function AddQuestionnaire() {
     if (!selectedQuestionnaireId || !selectionMode) return
 
     try {
-      const response = await fetch("http://localhost:5000/set_questionnaire_type", {
+      const response = await fetch(`${BACKEND_URL}/set_questionnaire_type`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +105,7 @@ function AddQuestionnaire() {
 
   const fetchQuestionnaires = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/get/questionnaires", {
+      const response = await fetch(`${BACKEND_URL}/api/get/questionnaires`, {
         method: "GET",
         headers: {
           Accept: "application/json",
