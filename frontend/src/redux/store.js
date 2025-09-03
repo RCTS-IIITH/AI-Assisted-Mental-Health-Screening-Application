@@ -1,13 +1,23 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from './authSlice';
+import childrenReducer from './childrenSlice.js'
+import questionnaireReducer from './questionnaireSlice.js'
 
-/** call reducers */
-import questionReducer from './question_reducer';
-import resultReducer from './result_reducer';
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    children:childrenReducer,
+    questionnaire: questionnaireReducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore these action types for serializable check
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+      },
+    }),
+  devTools: process.env.NODE_ENV !== 'production', // Enable Redux DevTools in development
+});
 
-const rootReducer = combineReducers({
-    questions : questionReducer,
-    result : resultReducer
-})
-
-/** create store with reducer */
-export default configureStore({ reducer : rootReducer});
+// Export store as default
+export default store;

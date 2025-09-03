@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 // import { configureStore } from '@reduxjs/toolkit';
 // import rootReducer from './slices';
 import store from './redux/store';
+// import './api/axiosConfig';
 
 // Get the root element from the DOM
 const root = ReactDOM.createRoot(document.getElementById('root'));
