@@ -51,7 +51,7 @@ async def getChildrenBySchool(req: GetChildBySchool):
     
     return {"children": children}
 
-@router.get("/delete-child")
+@router.post("/delete-child")
 async def deleteChild(req: ChildRequest):
     child_id = req.child_id
     if not child_id:

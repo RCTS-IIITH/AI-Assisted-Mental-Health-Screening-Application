@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.requests import Request
 from starlette.responses import Response
-from logging_config import logger
+from utils.logging_config import logger
 from database.chatbot import connect_questionnaire_db
 from database.users import connect_users_db
 from database.children import connect_children_db
