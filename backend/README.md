@@ -5,7 +5,7 @@ Here I am discussing the backend
 ## Directory Structure
 ```
 backend/
-├── database/                   # Database-related logic
+├── database/                   # Database-related logics
 │   ├── chatbot.py
 │   ├── children.py
 │   └── users.py
